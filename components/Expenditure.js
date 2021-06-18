@@ -5,13 +5,13 @@ import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 const Expenditure = (props) => {
   const [living, setLiving] = useState(0);
-  const [rent, setRent] = useState(0);
+  const [rent, setRent] = React.useState(props.rent);
   const [aid, setAid] = useState(0);
   const [expenditure, setExpenditure] = useState(0);
     return (
   <View style={styles.container}>
     <Text style={styles.header}>
-       General Brandeis yearly expenditure calculator  
+       Brandeis yearly expenditure calculator for rent = {props.rent}
     </Text>
     <Text style={styles.textinput}>
     Enter your monthly cost of living(without rent):

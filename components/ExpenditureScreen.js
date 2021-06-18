@@ -7,8 +7,10 @@ import Expenditure from './Expenditure';
 const ExpenditureScreen= ({ navigation, route }) => {
   return (
     <View style={{margin:'25%',marginTop:10}}>
-      <Expenditure/>
-    </View>
+
+<Expenditure rent= {800}/>
+<Expenditure rent= {1200}/>
+          </View>
   );
 };
 
