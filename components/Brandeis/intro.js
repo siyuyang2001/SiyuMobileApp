@@ -9,6 +9,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ExpenditureScreen from './ExpenditureScreen'
 import ToDoList from './ToDoList'
 import Brandeis from './Brandeis'
+import Cam from './Cam'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -24,6 +25,8 @@ const Tab = createBottomTabNavigator();
            options={{ title: 'Expenditure' }}/>
         <Stack.Screen name="ToDoList" component={ToDoList}
            options={{title: 'ToDoList'}}/>
+           <Stack.Screen name="Cam" component={Cam}
+              options={{title: 'Cam'}}/>
 
 </Tab.Navigator>
 
@@ -83,9 +86,15 @@ const Tab = createBottomTabNavigator();
        }
      />
          <Text>  {"\n"} </Text>
+         <Button
+        title="Upload your favorite picture"
+        color='#add8e6'
+        onPress={() =>
+        navigation.navigate('Cam')
+        }/>
          </View>
 
-     </View> //54 view
+     </View>
    );
  };
 
