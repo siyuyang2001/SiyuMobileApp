@@ -69,6 +69,11 @@ const HomeScreen = ({ navigation }) => {
         onPress={() =>
           navigation.navigate('HELLO')
         }/>
+        <Text>  {"\n"} </Text>
+        <Image
+          source={{uri: "https://memegenerator.net/img/instances/66066040.jpg"}}
+          style={{width: 400, height: 300}}
+        />
 
     </View>
 
@@ -95,7 +100,7 @@ const ProfileScreen = ({ navigation, route }) => {
       <Image
         source={{uri: "http://schoolconstructionnews.com/wp-content/uploads/2017/12/CD.Brandeis.800.jpg"}}
         style={{width: 350, height: 200}}
-      />  <Text style={styles.body}>Make yourself at home and explore Brandeis!</Text>     
+      />  <Text style={styles.body}>Make yourself at home and explore Brandeis!</Text>
            <Text>  {"\n"} </Text>
     </View>
 );
