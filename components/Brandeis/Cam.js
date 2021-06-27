@@ -1,6 +1,20 @@
-import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { Component } from 'react';
+import {
+  ActivityIndicator,
+  Button,
+  Clipboard,
+  Image,
+  Share,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import { Constants } from 'expo';
+import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
+
 
 export default function App() {
   let [selectedImage, setSelectedImage] = React.useState(null);

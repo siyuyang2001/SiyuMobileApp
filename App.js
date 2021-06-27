@@ -3,10 +3,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { Image, TextInput, Button, StyleSheet, Text, View } from 'react-native';
+import { Linking } from 'react-native';
 
 import ExpenditureScreen from './components/Brandeis/ExpenditureScreen'
 import ToDoList from './components/Brandeis/ToDoList'
-import Intro from './components/Brandeis/Intro.js'
+import Intro from './components/Brandeis/Intro'
 
 const Stack = createStackNavigator();
 
@@ -27,7 +28,7 @@ export default function App () {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: 'Welcome' }}
+            options={{ title: 'Welcome to Brandeis' }}
           />
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="Intro" component={Intro} />
@@ -111,8 +112,21 @@ const ProfileScreen = ({ navigation, route }) => {
 const HiSayer = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
-        <Text style={styles.body}>Welcome to Brandeis!
+        <Text style={styles.body}>Welcome to Brandeis! Here is a list you might want to explore
         </Text>
+        <Text style={{color: 'blue'}}
+      onPress={() => Linking.openURL('https://www.brandeis.edu/')}>
+        1. Explore Brandeis Main page
+    </Text>
+
+    <Text style={{color: 'blue'}}
+      onPress={() => Linking.openURL('https://www.brandeis.edu/admissions/index.html')}>
+        2. Explore Brandeis undergraduate admission page
+          </Text>
+          <Text style={{color: 'blue'}}
+            onPress={() => Linking.openURL('https://www.brandeis.edu/about/visiting/map.html')}>
+          3. Brandeis Campus map
+            </Text>
        <Image
          source={{uri: "https://www.brandeis.edu/images/judge.jpg"}}
          style={{width: 550, height: 300}}

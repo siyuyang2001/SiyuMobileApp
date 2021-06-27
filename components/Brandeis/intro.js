@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
-import React, { useState } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { Image, TextInput, Button, StyleSheet, Text, View} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -86,6 +86,14 @@ const Tab = createBottomTabNavigator();
        }
      />
          <Text>  {"\n"} </Text>
+         <Image
+           source={{
+             uri:
+               'http://simpleicon.com/wp-content/uploads/camera.png',
+           }}
+           style={styles.buttonImageIconStyle}
+         />
+
          <Button
         title="Upload your favorite picture"
         color='#add8e6'
