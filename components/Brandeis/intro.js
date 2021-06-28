@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 import ExpenditureScreen from './ExpenditureScreen'
-import ToDoList from './ToDoList'
+import TourList from './TourList'
 import Brandeis from './Brandeis'
 import Cam from './Cam'
 
@@ -23,8 +23,8 @@ const Tab = createBottomTabNavigator();
                  options={{ title: 'Brandeis' }}/>
         <Stack.Screen name="Expenditure" component={ExpenditureScreen}
            options={{ title: 'Expenditure' }}/>
-        <Stack.Screen name="ToDoList" component={ToDoList}
-           options={{title: 'ToDoList'}}/>
+        <Stack.Screen name="TourList" component={TourList}
+           options={{title: 'TourList'}}/>
            <Stack.Screen name="Cam" component={Cam}
               options={{title: 'Cam'}}/>
 
@@ -82,7 +82,7 @@ const Tab = createBottomTabNavigator();
        title="Make a tour list"
        color='#add8e6'
        onPress={() =>
-         navigation.navigate('ToDoList')
+         navigation.navigate('TourList')
        }
      />
          <Text>  {"\n"} </Text>
@@ -100,6 +100,9 @@ const Tab = createBottomTabNavigator();
         onPress={() =>
         navigation.navigate('Cam')
         }/>
+         <Text>  {"\n"} </Text>
+        <Button title="Go Home"
+    onPress={() => navigation.navigate('Home')} />
          </View>
 
      </View>

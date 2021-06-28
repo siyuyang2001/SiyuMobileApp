@@ -6,7 +6,7 @@ import { Image, TextInput, Button, StyleSheet, Text, View } from 'react-native';
 import { Linking } from 'react-native';
 
 import ExpenditureScreen from './components/Brandeis/ExpenditureScreen'
-import ToDoList from './components/Brandeis/ToDoList'
+import TourList from './components/Brandeis/TourList'
 import Intro from './components/Brandeis/Intro'
 
 const Stack = createStackNavigator();
@@ -58,19 +58,19 @@ const HomeScreen = ({ navigation }) => {
         }
       />
       <Text>  {"\n"} </Text>
-      <Button
-        title="Go to  About"
-        onPress={() =>
-          navigation.navigate('About')
-        }
-      />
         <Text> {"\n"}Meet Brandeis Judge!</Text>
-          <Text>  {"\n"} </Text>
+
         <Button color='#4682b4' title="I can say hi"
         onPress={() =>
           navigation.navigate('HELLO')
         }/>
         <Text>  {"\n"} </Text>
+        <Button
+          title="Go to  About"
+          onPress={() =>
+            navigation.navigate('About')
+          }
+        />
         <Image
           source={{uri: "https://memegenerator.net/img/instances/66066040.jpg"}}
           style={{width: 400, height: 300}}
@@ -97,11 +97,11 @@ const ProfileScreen = ({ navigation, route }) => {
         style={{width: 400, height: 200}}
       />
            <Text>  {"\n"} </Text>
-      <Text style={styles.body}>This is a beautiful residence hall called skyline:</Text>     <Text>  {"\n"} </Text>
+      <Text style={styles.body}>This is a beautiful residence hall called skyline:</Text>
       <Image
         source={{uri: "http://schoolconstructionnews.com/wp-content/uploads/2017/12/CD.Brandeis.800.jpg"}}
-        style={{width: 350, height: 200}}
-      />  <Text style={styles.body}>Make yourself at home and explore Brandeis!</Text>
+        style={{width: 350, height: 200}}/>
+      <Text style={styles.body}>Make yourself at home and explore Brandeis!</Text>
            <Text>  {"\n"} </Text>
     </View>
 );
@@ -131,6 +131,8 @@ const HiSayer = ({ navigation, route }) => {
          source={{uri: "https://www.brandeis.edu/images/judge.jpg"}}
          style={{width: 550, height: 300}}
        />
+       <Button title="Go Home"
+    onPress={() => navigation.navigate('Home')} />
     </View>
   );
 };
@@ -155,7 +157,7 @@ const styles = StyleSheet.create({
   header: {
     textAlign: 'center',
    fontSize: 30,
-   color:`#db7093`
+   color:`skyblue`
  },
  body:{
    textAlign: 'center',

@@ -60,8 +60,8 @@ const ToDoList = (props) => {
 
   const renderTodoItem = ({item}) => {
     return (
-      <View style={{border:'thin solid pink'}}>
-        <Text style={styles.places}>
+      <View>
+        <Text style={styles.body}>
            <Text>{item.tour} in </Text>
            <Text> {item.dueDate} </Text>
            <Text> -- {item.comment} </Text>
@@ -93,41 +93,45 @@ const ToDoList = (props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}> Personal Brandeis Tour List</Text>
-      <View>
-
+     <View style={styles.content}>
         <TextInput
-          style={{height: 20}}
-          placeholder="Enter the place you want to go"
+         label='name of the place'
+           style={{ width: 180, borderColor: 'gray', borderWidth: 1 }}
+          placeholder="Enter the place "
           onChangeText={text => {
                setTour(text);
              }}
           value = {tour}
         />
-      </View>
-      <View>
+</View>
+ <View style={styles.content}>
         <TextInput
-          style={{height: 20}}
+           style={{ width: 180, borderColor: 'gray', borderWidth: 1 }}
           placeholder="Enter upper/lower campus"
           onChangeText={text => {
                setDueDate(text);
              }}
           value = {dueDate}
         />
-      </View>
-      <View>
+        </View>
+ <View style={styles.content}>
+
         <TextInput
-          style={{height: 20}}
+         style={{ width: 180, borderColor: 'gray', borderWidth: 1 }}
           placeholder="Enter your comment"
+          editable = {true}
+          maxLength={100}
           onChangeText={text => {
                setComment(text);
              }}
           value = {comment}
+
         />
       </View>
       <View>
         <Button
            title={"add"}
-           color="#5f9ea0"
+          style={styles.button}
            onPress = {() => {
              const newToDoItems =
                places.concat(
@@ -160,9 +164,18 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     backgroundColor: '#eee',
     justifyContent: 'center',
-    textAlign:'left',
-    marginTop:20,
-    padding:20,
+    textAlign:'center',
+    marginTop:30,
+    padding:40,
+  },
+  content:{
+  marginTop: 40,
+  justifyContent: 'center',
+  alignItems: 'center',
+  textAlign:'center',
+  backgroundColor: 'white',
+  width: 1350,
+  height: 80
   },
   todoItem:{
     justifyContent:'center',
@@ -173,6 +186,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     padding:20,
   },
+  body:{
+   flexDirection:'row',
+   justifyContent: 'space-between',
+   fontSize: 30,
+ },
   button: {
     color: '#fff',
     marginBottom: 4,
@@ -182,6 +200,11 @@ const styles = StyleSheet.create({
     textAlign:'center',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  button: {
+    backgroundColor: 'blue',
+    padding: 20,
+    borderRadius: 5,
   },
 
 });

@@ -9,7 +9,7 @@ const ToDo = () => {
   const [data,setData] = useState([{'todo':'eat'},{'todo':'sleep'}])
 
   return (
-    <View style={{margin:'25%',marginTop:10}}>
+    <View style={{margin:'50%',marginTop:10}}>
       <Text style={{fontSize:40, color:'dimgrey'}}>Tour List </Text>
       <FlatList
         data = {data}
