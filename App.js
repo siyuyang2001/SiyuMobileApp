@@ -2,14 +2,16 @@ import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Image, TextInput, Button, StyleSheet, Text, View } from 'react-native';
+import { Image, TextInput, Button, StyleSheet, Text, View, ImageBackground,SafeAreaView } from 'react-native';
 import { Linking } from 'react-native';
 
 import ExpenditureScreen from './components/Brandeis/ExpenditureScreen'
 import TourList from './components/Brandeis/TourList'
 import Intro from './components/Brandeis/Intro'
+import Game from './components/Game'
 
 const Stack = createStackNavigator();
+const image = { uri: "https://i.pinimg.com/736x/45/ce/29/45ce2986d79fc7cd05014bd522a88834.jpg" };
 
 const Header = (props) => {
   return (
@@ -34,6 +36,7 @@ export default function App () {
           <Stack.Screen name="Intro" component={Intro} />
           <Stack.Screen name="About" component={AboutScreen} />
           <Stack.Screen name="HELLO" component={HiSayer} />
+            <Stack.Screen name="Game" component={Game} />
 
         </Stack.Navigator>
     </NavigationContainer>
@@ -42,7 +45,8 @@ export default function App () {
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.colContainer}>
+     <SafeAreaView style={styles.container}>
+ <ImageBackground source={image} style={styles.image}>
       <Text>  {"\n"} </Text>
       <Button
         title="Go to Siyu's profile"
@@ -58,12 +62,20 @@ const HomeScreen = ({ navigation }) => {
         }
       />
       <Text>  {"\n"} </Text>
-        <Text> {"\n"}Meet Brandeis Judge!</Text>
+      <Button
+        title="Getting bored?"
+        color="#4169e1"
+        onPress={() =>
+          navigation.navigate('Game')
+        }
+      />
+        <Text> {"\n"} Meet Brandeis Judge!</Text>
 
         <Button color='#4682b4' title="I can say hi"
         onPress={() =>
           navigation.navigate('HELLO')
         }/>
+
         <Text>  {"\n"} </Text>
         <Button
           title="Go to  About"
@@ -75,8 +87,8 @@ const HomeScreen = ({ navigation }) => {
           source={{uri: "https://memegenerator.net/img/instances/66066040.jpg"}}
           style={{width: 400, height: 300}}
         />
-
-    </View>
+ </ImageBackground>
+  </SafeAreaView>
 
   );
 };
@@ -139,7 +151,7 @@ const HiSayer = ({ navigation, route }) => {
 
 const AboutScreen = ({ navigation, route }) => {
   return (
-    <View>
+    <View styles={styles.container}>
        <Text>This was created by Siyu Yang</Text>
        <Text>contact: siyuyang@brandeis.edu</Text>
     </View>
@@ -163,6 +175,11 @@ const styles = StyleSheet.create({
    textAlign: 'center',
    fontSize: 20,
 },
+image: {
+   flex: 1,
+   resizeMode: "cover",
+   justifyContent: "center"
+ },
   colContainer: {
     flexDirection:'column',
     backgroundColor: '#fff',

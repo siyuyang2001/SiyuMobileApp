@@ -10,7 +10,7 @@ import {
   Text,
   TouchableOpacity,
   View,
-} from 'react-native';
+  SafeAreaView} from 'react-native';
 import { Constants } from 'expo';
 import * as Permissions from 'expo-permissions';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -76,6 +76,7 @@ export default function App() {
       <View style={styles.container}>
 
         <Image source={{ uri: selectedImage.localUri }} style={styles.thumbnail} />
+         <ActivityIndicator size="small" color="#0000ff" />
         <Button style={styles.button}
            title={"Store the Photo"}
            color="blue"

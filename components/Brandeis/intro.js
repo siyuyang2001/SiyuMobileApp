@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Image, TextInput, Button, StyleSheet, Text, View} from 'react-native';
+import { Image, TextInput, Button, StyleSheet, Text, View,SafeAreaView } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
@@ -13,7 +13,7 @@ import Cam from './Cam'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
+const image = { uri: "https://i.pinimg.com/736x/45/ce/29/45ce2986d79fc7cd05014bd522a88834.jpg" };
   const BrandeisScreen = () => {
    return (
      <Tab.Navigator>
@@ -34,7 +34,7 @@ const Tab = createBottomTabNavigator();
  };
  const BrandeisPage = ({ navigation }) => {
    return (
-     <View style={styles.container}>
+       <SafeAreaView style={styles.container}>
      <View style={styles.buttonIconSeparatorStyle}>
 
      <Image
@@ -105,7 +105,7 @@ const Tab = createBottomTabNavigator();
     onPress={() => navigation.navigate('Home')} />
          </View>
 
-     </View>
+    </SafeAreaView>
    );
  };
 
