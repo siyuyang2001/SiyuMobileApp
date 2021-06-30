@@ -81,7 +81,7 @@ export default class App extends Component {
         </TouchableOpacity>
           </SafeAreaView>
 
-        <Button color="#f08080" title="Start a new round" onPress={() => this._newGame()} />
+        <Button color="#f08080" title="Click me to Start!" onPress={() => this._newGame()} />
       </View>
     );
   }
