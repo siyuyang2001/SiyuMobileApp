@@ -10,6 +10,7 @@ import ExpenditureScreen from './ExpenditureScreen'
 import TourList from './TourList'
 import Brandeis from './Brandeis'
 import Cam from './Cam'
+import Video from './Video'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -25,6 +26,8 @@ const image = { uri: "https://i.pinimg.com/736x/45/ce/29/45ce2986d79fc7cd05014bd
            options={{ title: 'Expenditure' }}/>
         <Stack.Screen name="TourList" component={TourList}
            options={{title: 'TourList'}}/>
+           <Stack.Screen name="Video" component={Video}
+              options={{title: 'Video'}}/>
            <Stack.Screen name="Cam" component={Cam}
               options={{title: 'Cam'}}/>
 
@@ -36,7 +39,24 @@ const image = { uri: "https://i.pinimg.com/736x/45/ce/29/45ce2986d79fc7cd05014bd
    return (
        <SafeAreaView style={styles.container}>
      <View style={styles.buttonIconSeparatorStyle}>
+      <Text>  {"\n"} </Text>
+     <Image
+       source={{
+         uri:
+           'https://www.iconpacks.net/icons/1/free-video-icon-818-thumb.png',
+       }}
+       style={styles.buttonImageIconStyle}
+     />
 
+     <View style={styles.buttonIconSeparatorStyle} />
+      <Button
+   title="See a Video about Brandeis"
+   color='#8fbc8f'
+   onPress={() =>
+    navigation.navigate('Video')
+   }
+   />
+    <Text>  {"\n"} </Text>
      <Image
        source={{
          uri:

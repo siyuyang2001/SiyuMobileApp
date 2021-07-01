@@ -10,6 +10,7 @@ import TourList from './components/Brandeis/TourList'
 import Intro from './components/Brandeis/Intro'
 import Game from './components/Game'
 
+
 const Stack = createStackNavigator();
 const image = { uri: "https://i.pinimg.com/736x/45/ce/29/45ce2986d79fc7cd05014bd522a88834.jpg" };
 
@@ -47,6 +48,8 @@ const HomeScreen = ({ navigation }) => {
   return (
      <SafeAreaView style={styles.container}>
  <ImageBackground source={image} style={styles.image}>
+
+
       <Text>  {"\n"} </Text>
       <Button
         title="Go to Siyu's profile"
