@@ -64,6 +64,7 @@ const Expenditure = (props) => {
                setExpenditure(55340+living*12-aid+12*rent)}
       />
     <Text>{"\n"} The approximate yearly expenditure is ${expenditure} </Text>
+    
   </View>
       );
     }

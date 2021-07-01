@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {View,StyleSheet,FlatList,Text,Button,TextInput} from 'react-native';
+import {View,StyleSheet,FlatList,Text,Button,TextInput,ScrollView } from 'react-native';
 
 const renderItem = ({item}) => {
   <Text>{item.todo}</Text>
@@ -9,6 +9,7 @@ const ToDo = () => {
   const [data,setData] = useState([{'todo':'eat'},{'todo':'sleep'}])
 
   return (
+      <ScrollView>
     <View style={{margin:'50%',marginTop:10}}>
       <Text style={{fontSize:40, color:'dimgrey'}}>Tour List </Text>
       <FlatList
@@ -24,6 +25,7 @@ const ToDo = () => {
         data = {JSON.stringify(data)}
       </Text>
     </View>
+      </ScrollView>
   );
 }
 
